@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.MainPage">
+
+        <ListView x:Name="listView"
+                  Header="Games"
+                  HasUnevenRows="True"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate
+                    >
+                    <ViewCell >
+                        <!--<SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItem Text="Delete"
+                                               BackgroundColor="LightPink"
+                                               Invoked="OnDeleteInvoked"
+                                               CommandParameter="{Binding}"
+                                                /> 
+                                    <SwipeItem Text="Edit"
+                                               BackgroundColor="LightGreen"
+                                               Invoked="OnEditInvoked"
+                                               CommandParameter="{Binding}"
+                                               />
+                                </SwipeItems>
+                            </SwipeView.RightItems>-->
+
+                        <Frame BorderColor="Gray"
+                                CornerRadius="10"
+                                Padding="5,10,5,10"
+                                Margin="10,0,10,0"
+                                >
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding Name}" FontAttributes="Bold" />
+                                <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+                                    <Label Text="{Binding Path=Date, StringFormat='Date: {0:d}'}" />
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
+                                    <Button 
+                                        Text="More" 
+                                        BackgroundColor="LightBlue" TextColor="Black"
+                                        CommandParameter="{Binding}" Pressed="OnMoreInvoked" />
+                                </VerticalStackLayout>
+                                <VerticalStackLayout Grid.Row="0" Grid.Column="3" Grid.RowSpan="2">
+                                    <Button 
+                                        Text="Edit" BackgroundColor="LightGreen"
+                                        CommandParameter="{Binding}" Pressed="OnEditInvoked" />
+                                    <Button 
+                                        Text="Delete" BackgroundColor="LightPink"
+                                        CommandParameter="{Binding}" Pressed="OnDeleteInvoked" />
+                                </VerticalStackLayout>
+
+                            </Grid>
+                        </Frame>
+                        <!--</SwipeView>-->
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    
+
+</ContentPage>
